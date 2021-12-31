@@ -18,7 +18,7 @@ export default function Hero() {
 			overflow="hidden"
 			// bgGradient="linear(to-b, transparent,transparent, white)"
 		>
-			<video className="video-bg" autoPlay muted loop>
+			<video className="video-bg" autoPlay muted >
 				<source src="assets/posies.mp4" type="video/mp4" />
 			</video>
 			<VStack
@@ -44,7 +44,8 @@ export default function Hero() {
 						POSIES
 					</Heading>
 				</Stack>
-				<Stack h="10%"
+				<Stack
+					h="10%"
 					// border="solid teal"
 					alignSelf={"flex-end"}
 					align="center"
@@ -52,14 +53,6 @@ export default function Hero() {
 					justify="center"
 					direction={"row"}
 				>
-					{/* <Button
-						bg={"blue.400"}
-						rounded={"full"}
-						color={"white"}
-						_hover={{ bg: "blue.500" }}
-					>
-						Show me more
-					</Button> */}
 					<Button
 						bg={"whiteAlpha.300"}
 						rounded={"full"}
