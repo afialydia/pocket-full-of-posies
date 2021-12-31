@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { useViewportScroll, useTransform } from "framer-motion";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//styles
+import {
+	Heading,
+	useColorModeValue,
+	useBreakpointValue,
+	Flex,
+	Text,
+	Grid,
+	GridItem,
+} from "@chakra-ui/react";
+
+//files
+
+import Hero from "./components/hero";
+
+const App = () => {
+	return (
+		<Flex width="100%" h="100%" className='App'>
+			<Grid
+				templateRows="repeat(3,fr)"
+				templateColumns="1fr"
+				placeItems="center stretch"
+				h="100%"
+				w="100%"
+				area=" 2 / 1 / 2 / 4"
+				// border="solid magenta"
+				gap={5}
+			>
+				<GridItem rowSpan={1} colSpan={1} height=" calc(var(--vh, 1vh) * 100)">
+					<Hero />
+				</GridItem>
+			</Grid>
+		</Flex>
+	);
+};
 
 export default App;
