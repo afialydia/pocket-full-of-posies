@@ -1,5 +1,4 @@
-.hero {
-}
+$layout-breakpoint-xxl: 80em;
 
 .video-bg {
 	position: absolute;
@@ -13,5 +12,8 @@
 	object-fit: cover;
 }
 
-.App {
+@media(min-width: $layout-breakpoint-xxl){
+	.video-bg{
+		min-width: 100%;
+	}
 }

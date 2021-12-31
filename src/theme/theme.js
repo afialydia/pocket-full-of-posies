@@ -22,7 +22,7 @@ const styles = {
 		},
 		body: {
 			// color: mode("#44324c", "#f0f0ee")(props),
-			background: "pink",
+			background: "rgb(s221,225,218)",
 			minH: "100%",
 			w: "100%",
 			display: "flex",
@@ -36,6 +36,7 @@ const styles = {
 	}),
 };
 
+
 const fonts = {
 	heading: "Ilyas",
 	body: "Ilyas",
@@ -48,3 +49,5 @@ const theme = extendTheme({
 });
 
 export default theme;
+
+// 4a4a4a

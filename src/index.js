@@ -8,7 +8,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 //styles
 import theme from "./theme/theme.js";
 import Fonts from "./theme/fonts.jsx";
-import "./index.css";
+import "./index.scss";
 
 //files
 import App from "./App";

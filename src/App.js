@@ -15,10 +15,12 @@ import {
 //files
 
 import Hero from "./components/hero";
+import HomePage from "./components/homepage";
+import Footer from "./components/footer/footer.component";
 
 const App = () => {
 	return (
-		<Flex width="100%" h="100%" className='App'>
+		<Flex width="100%" h="100%" className="App" direction='column'>
 			<Grid
 				templateRows="repeat(3,fr)"
 				templateColumns="1fr"
@@ -32,7 +34,11 @@ const App = () => {
 				<GridItem rowSpan={1} colSpan={1} height=" calc(var(--vh, 1vh) * 100)">
 					<Hero />
 				</GridItem>
+				<GridItem rowSpan={1} colSpan={1} height="auto">
+					<HomePage />
+				</GridItem>
 			</Grid>
+      <Footer/>
 		</Flex>
 	);
 };
