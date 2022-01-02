@@ -58,7 +58,7 @@ const Footer = () => {
 			as="footer"
 			display="flex"
 			flexDirection="column"
-			marginTop=".75rem"
+			// marginTop=".75rem"
 			height="30%"
 			minH="10rem"
 			background={inversebg}

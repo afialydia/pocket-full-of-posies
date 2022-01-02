@@ -7,6 +7,8 @@ import {
 	chakra,
 	useBreakpointValue,
 } from "@chakra-ui/react";
+import { ReactComponent as Logo } from "../../assets/Logo.svg";
+
 
 export default function Hero() {
 	return (
@@ -18,7 +20,7 @@ export default function Hero() {
 			overflow="hidden"
 			// bgGradient="linear(to-b, transparent,transparent, white)"
 		>
-			<video className="video-bg" autoPlay muted >
+			<video className="video-bg" autoPlay muted>
 				<source src="assets/posies.mp4" type="video/mp4" />
 			</video>
 			<VStack
@@ -53,14 +55,9 @@ export default function Hero() {
 					justify="center"
 					direction={"row"}
 				>
-					<Button
-						bg={"whiteAlpha.300"}
-						rounded={"full"}
-						color={"white"}
-						_hover={{ bg: "whiteAlpha.500" }}
-					>
-						Show me more
-					</Button>
+					<chakra.span h="100%" w="4.375rem" className="logo-container">
+						{/* <Logo className="logo" /> */}
+					</chakra.span>
 				</Stack>
 			</VStack>
 		</Flex>
