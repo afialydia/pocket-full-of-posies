@@ -4,7 +4,7 @@ import Link from "react-router-dom";
 
 import HamburgerMenu from "./hamburger-menu";
 
-const Navbar = () => {
+const Navbar = ({ signOutStart }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const closeMenu = () => {
@@ -68,7 +68,7 @@ const Navbar = () => {
 				<NavItem title="shop" section="shop" />
 				<NavItem title="contact" section="/#contact" />
 				{currentUser ? (
-					<chakra.div className="option" onClick={() => auth.signOut()}>
+					<chakra.div className="option" onClick={() => signOutStart}>
 						<Heading> SIGN OUT</Heading>
 					</chakra.div>
 				) : (

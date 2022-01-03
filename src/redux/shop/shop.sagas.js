@@ -1,7 +1,7 @@
 import { takeEvery, all, call, put } from "redux-saga/effects";
 
 import {
-	firestore,
+	db,
 	convertCollectionsSnapshotToMap,
 } from "../../firebase/firebase.utils";
 
@@ -16,7 +16,7 @@ export function* fetchCollectionsAsync() {
 	yield console.log("I am fired");
 
 	try {
-		const collectionRef = firestore.collection("collections");
+		const collectionRef = db.collection("collections");
 		const snapshot = yield collectionRef.get();
 		const collectionsMap = yield call(
 			convertCollectionsSnapshotToMap,

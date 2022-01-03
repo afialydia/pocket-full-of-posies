@@ -13,7 +13,7 @@ const HomePage = () => {
 	return (
 		<Flex width="100%" h="100%" className="App" direction="column">
 			<Grid
-				templateRows="repeat(3,fr)"
+				// templateRows="repeat(3,fr)"
 				templateColumns="1fr"
 				placeItems="center stretch"
 				h="100%"
@@ -26,17 +26,17 @@ const HomePage = () => {
 				<GridItem rowSpan={1} colSpan={1} height=" calc(var(--vh, 1vh) * 100)">
 					<Hero />
 				</GridItem>
-				<GridItem rowSpan={1} colSpan={1} minH=" calc(var(--vh, 1vh) * 200)">
+				<GridItem
+					rowSpan={2}
+					colSpan={1}
+					minH=" calc(var(--vh, 1vh) * 200)"
+					// bgGradient={
+					// 	"linear(transparent 20%,rgb(255, 255, 255,.7),rgb(241, 242, 237,.6),rgb(228, 230, 219,.5),rgb(214, 217, 201,.4),rgb(201, 205, 183,.4),rgb(188, 193, 166,.4),rgb(175, 181, 149,.4),rgb(162, 169, 132,.4),rgb(149, 157, 116,.4),rgb(136, 145, 99,.4),rgb(123, 134, 83,.4),rgb(72, 90, 19,.4))"
+					// }
+				>
 					<About />
 				</GridItem>
-				<GridItem
-					rowSpan={1}
-					colSpan={1}
-					height="auto"
-					bgGradient={
-						"linear(transparent 20%,rgb(255, 255, 255,.7),rgb(241, 242, 237,.6),rgb(228, 230, 219,.5),rgb(214, 217, 201,.4),rgb(201, 205, 183,.4),rgb(188, 193, 166,.4),rgb(175, 181, 149,.4))"
-					}
-				>
+				<GridItem rowSpan={1} colSpan={1} height="auto">
 					<Flex
 						direction="column"
 						align="center"
@@ -54,12 +54,10 @@ const HomePage = () => {
 						align="center"
 						padding="1.25rem 5rem"
 						// background="red"
-						bgGradient={
-							"linear(rgb(175, 181, 149,.4),rgb(162, 169, 132,.4),rgb(149, 157, 116,.4),rgb(136, 145, 99,.4),rgb(123, 134, 83,.4),rgb(72, 90, 19,.4))"
-						}
+
 						// backgroundImage="url('/assets/noise.svg')"
 					>
-						<ContactForm />
+						{/* <ContactForm /> */}
 					</Flex>
 				</GridItem>
 			</Grid>

@@ -119,7 +119,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
 					transition={{ opacity: { duration: 0.2 } }}
 				>
 					{currentUser ? (
-						<chakra.div className="option" onClick={() => auth.signOut()}>
+						<chakra.div className="option" onClick={() => signOutStart()}>
 							<Heading> SIGN OUT</Heading>
 						</chakra.div>
 					) : (
