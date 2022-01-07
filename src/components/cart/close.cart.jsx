@@ -10,7 +10,7 @@ import { signOutStart } from "../../redux/user/user.actions";
 
 const CartCloseButton = ({ onClose, signOutStart, currentUser }) => {
 	return (
-		<Flex color="whitesmoke" w="100%" justify="space-between" h="15%">
+		<Flex  w="100%" justify="space-between" h="15%">
 			{currentUser ? (
 				<chakra.div
 					className="option"
@@ -18,20 +18,26 @@ const CartCloseButton = ({ onClose, signOutStart, currentUser }) => {
 						signOutStart();
 					}}
 				>
-					<Heading> SIGN OUT</Heading>
+					<Text color="whitesmoke" _hover={{color:"#4a4a4a", fontWeight:"bold"}}>Ready to <chakra.span fontWeight="bold" color="whitesmoke">sign out,</chakra.span> {currentUser.displayName}?</Text>
 				</chakra.div>
 			) : (
-				<Link className="option" to="/signin">
-					<Text _hover={{ cursor: "pointer" }} onClick={() => onClose()}>
-						{" "}
+				<Text
+					_hover={{ cursor: "pointer", color: "#4a4a4a", fontWeight: "bold" }}
+					onClick={() => onClose()}
+				>
+					<Link className="option" to="/signin">
 						Have an account?
-						<br /> <chakra.span color="#4a4a4a" fontWeight={"bold"}>Sign In</chakra.span> to access your saved cart.
-					</Text>
-				</Link>
+						<br />{" "}
+						<chakra.span color="whitesmoke" fontWeight={"bold"}>
+							Sign In
+						</chakra.span>{" "}
+						to access your saved cart.
+					</Link>
+				</Text>
 			)}
 			<Text
 				onClick={() => onClose()}
-				_hover={{ color: "whitesmoke", cursor: "pointer" }}
+				_hover={{ color: "#4a4A4A", cursor: "pointer", fontWeight: "bold" }}
 				size="md"
 			>
 				close

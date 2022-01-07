@@ -38,14 +38,10 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/shop" element={<ShopPage />} />
-				<Route path="/signin" element={<SignInAndSignUpPage />} />
-
 				<Route
 					exact
 					path="/signin"
-					render={() =>
-						currentUser ? <Navigate to="/" /> : <SignInAndSignUpPage />
-					}
+					element={currentUser ? <Navigate to="/" /> : <SignInAndSignUpPage replace />}
 				/>
 			</Routes>
 			<Footer />
