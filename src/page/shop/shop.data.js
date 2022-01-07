@@ -208,39 +208,34 @@ const SHOP_DATA = [
 		items: [
 			{
 				id: 30,
-				name: "Camo Down Vest",
+				name: "Event Florals Consultation",
 				imageUrl: "https://i.ibb.co/xJS0T3Y/camo-vest.png",
-				price: 325,
+				price: 50,
+				description: "45 minute 1:1 with our event florist to discuss your potential event. $50 deposit toward the price of event florals.",
 			},
 			{
 				id: 31,
-				name: "Floral T-shirt",
+				name: "Plant Parent Emergency Care",
 				imageUrl: "https://i.ibb.co/qMQ75QZ/floral-shirt.png",
-				price: 20,
+				price: 35,
+				description:
+					"Online consultation with our resident Plant Daddi, they can help you diagnose what could be causing your plant to wilt.",
 			},
 			{
 				id: 32,
-				name: "Black & White Longsleeve",
+				name: "Floral Arranging 101",
 				imageUrl: "https://i.ibb.co/55z32tw/long-sleeve.png",
 				price: 25,
+				description:
+					"One hour class offered online for those interested in creating their own floral arrangements.",
 			},
 			{
 				id: 33,
-				name: "Pink T-shirt",
+				name: "Botany Basics + Q&A",
 				imageUrl: "https://i.ibb.co/RvwnBL8/pink-shirt.png",
-				price: 25,
-			},
-			{
-				id: 34,
-				name: "Jean Long Sleeve",
-				imageUrl: "https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png",
-				price: 40,
-			},
-			{
-				id: 35,
-				name: "Burgundy T-shirt",
-				imageUrl: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
-				price: 25,
+				price: 65,
+				description:
+					"One hour class offered online to learn the building blocks of plant care and maintenence.",
 			},
 		],
 	},

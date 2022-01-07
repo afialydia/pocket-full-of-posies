@@ -10,6 +10,8 @@ import {
 	signInWithEmailAndPassword,
 } from "firebase/auth";
 
+import { selectCurrentUser } from "../redux/user/user.selectors";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -61,6 +63,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 			console.log("error creating user", err.message);
 		}
 	}
+
+	console.log(snapShot);
 	return userRef;
 };
 
@@ -100,7 +104,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 
 export const getCurrentUser = () => {
 	return new Promise((resolve, reject) => {
-		const unsubscribe = onAuthStateChanged((userAuth) => {
+		const unsubscribe = onAuthStateChanged(auth,(userAuth) => {
 			unsubscribe();
 			resolve(userAuth);
 		}, reject);

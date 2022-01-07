@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Input } from "@chakra-ui/react";
 import "./form-input.styles.scss";
 
 const FormInput = ({ handleChange, label, ...otherProps }) => (
 	<div className="group">
-		<input className="form-input" onChange={handleChange} {...otherProps} />
+		<Input className="form-input" onChange={handleChange} {...otherProps} />
 		{label ? (
 			<label
 				className={`${

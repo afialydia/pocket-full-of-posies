@@ -22,7 +22,7 @@ const styles = {
 		},
 		body: {
 			// color: mode("#44324c", "#f0f0ee")(props),
-			background: "rgb(s221,225,218)",
+			background: "rgb(221,225,218)",
 			minH: "100%",
 			w: "100%",
 			display: "flex",
@@ -39,7 +39,8 @@ const styles = {
 
 const fonts = {
 	heading: "Ilyas",
-	body: "Ilyas",
+	body: "Dosis-Regular",
+	// body: "Dosis-Regular",
 };
 
 const theme = extendTheme({

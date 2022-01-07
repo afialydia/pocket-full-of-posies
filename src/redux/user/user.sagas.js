@@ -31,11 +31,8 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
 			additionalData
 		);
 		const userSnapshot = yield getDoc(userRef);
-		console.log("userSnap",userSnapshot,"userref",userRef)
 		yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
-		console.log("here are are at success")
 	} catch (error) {
-		console.log("here we are at error")
 		yield put(signInFailure(error));
 	}
 }
@@ -76,7 +73,8 @@ export function* signInWithEmail({ payload: { email, password } }) {
 
 export function* isUserAuthenticated() {
 	try {
-		const userAuth = yield getCurrentUser();
+		const {userAuth} = yield getCurrentUser();
+		console.log(userAuth)
 		if (!userAuth) return;
 		yield getSnapshotFromUserAuth(userAuth);
 	} catch (error) {

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import FormInput from "../form-input";
 import CustomButton from "../custom-button";
 
-import "./sign-up.styles.scss";
 import { connect } from "react-redux";
 import { emailSignUpStart } from "../../redux/user/user.actions";
+
+import { Center, chakra, Flex, Heading } from "@chakra-ui/react";
 
 const SignUp = ({ emailSignUpStart }) => {
 	const [userCreds, setUserCreds] = useState({
@@ -32,10 +33,9 @@ const SignUp = ({ emailSignUpStart }) => {
 	};
 
 	return (
-		<div className="sign-up">
-			<h2 className="title">I do not have an account</h2>
-			<span>Sign up with your email and password</span>
-			<form className="sign-up-form" onSubmit={handleSubmit}>
+		<Center p={4} w="100%" h="100%" flexDirection="column">
+			<Heading>SIGN UP</Heading>
+			<chakra.form w="100%" h="100%" maxW="30rem" onSubmit={handleSubmit}>
 				<FormInput
 					type="text"
 					name="displayName"
@@ -43,7 +43,7 @@ const SignUp = ({ emailSignUpStart }) => {
 					onChange={handleChange}
 					label="Display Name"
 					required
-				/>{" "}
+				/>
 				<FormInput
 					type="email"
 					name="email"
@@ -51,7 +51,7 @@ const SignUp = ({ emailSignUpStart }) => {
 					onChange={handleChange}
 					label="Email"
 					required
-				/>{" "}
+				/>
 				<FormInput
 					type="password"
 					name="password"
@@ -59,7 +59,7 @@ const SignUp = ({ emailSignUpStart }) => {
 					onChange={handleChange}
 					label="Password"
 					required
-				/>{" "}
+				/>
 				<FormInput
 					type="password"
 					name="confirmPassword"
@@ -68,9 +68,11 @@ const SignUp = ({ emailSignUpStart }) => {
 					label="Confirm Password"
 					required
 				/>
-				<CustomButton type="submit">SIGN UP</CustomButton>
-			</form>
-		</div>
+				<Flex direction="column">
+					<CustomButton type="submit">SIGN UP</CustomButton>
+				</Flex>
+			</chakra.form>
+		</Center>
 	);
 };
 

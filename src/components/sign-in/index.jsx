@@ -6,23 +6,7 @@ import {
 	emailSignInStart,
 } from "../../redux/user/user.actions";
 import { connect } from "react-redux";
-
-
-// .sign-in {
-// 	width: 380px;
-// 	display: flex;
-// 	flex-direction: column;
-// 	margin: 10px 0;
-// }
-
-// .title {
-// 	margin: 10px 0;
-// }
-
-// .buttons {
-// 	display: flex;
-// 	justify-content: space-between;
-// }
+import { Heading,chakra, Flex, Center } from "@chakra-ui/react";
 
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
@@ -44,10 +28,9 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 	};
 
 	return (
-		<div className="sign-in">
-			<h2> I already have an account</h2>
-			<span>Sign in with your email and password</span>
-			<form onSubmit={handleSubmit}>
+		<Center p={4}  w="100%" h="100%" flexDirection="column">
+			<Heading >SIGN IN</Heading>
+			<chakra.form w="100%" h="100%" maxW="30rem" onSubmit={handleSubmit}>
 				<FormInput
 					name="email"
 					type="email"
@@ -64,18 +47,18 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 					required
 					label="Password"
 				/>
-				<div className="buttons">
+				<Flex  direction="column">
 					<CustomButton type="submit">SIGN IN </CustomButton>
 					<CustomButton
 						onClick={googleSignInStart}
 						type="button"
 						isGoogleSignIn
 					>
-						Sign in with Google
+						Sign in w/ Google
 					</CustomButton>
-				</div>
-			</form>
-		</div>
+				</Flex>
+			</chakra.form>
+		</Center>
 	);
 };
 

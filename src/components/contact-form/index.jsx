@@ -97,7 +97,7 @@ const ContactForm = () => {
 	};
 
 	return (
-		<Stack width="100%" margin="auto" minH={"70%"} >
+		<Stack width="100%" margin="auto" minH={"100%"} border="solid" background="huntergreen" >
 			<form
 				style={{
 					height: "100%",

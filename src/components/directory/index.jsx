@@ -5,22 +5,63 @@ import MenuItem from "../menu-item";
 import { selectDirectorySections } from "../../redux/directory/directory.selectors";
 
 //styles
-import { Flex } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Center } from "@chakra-ui/react";
 // import "./homepage.styles.scss";
-
 
 const Directory = () => {
 	const sections = useSelector(selectDirectorySections);
-		return (
-			<Flex w="100%" wrap="wrap" justify="space-between">
-				{sections.map(({ id,...otherSectionProps}) => {
-					return (
-						<MenuItem  key={id}{...otherSectionProps} />
-					);
-				})}
-			</Flex>
-		);
-	
+	return (
+		<Grid
+			w={{ base: "100%", md: "80%" }}
+			// maxW="85rem"
+			// minH=" calc(var(--vh, 1vh) * 100)"
+			templateRows="repeat(5, 1fr)"
+			templateColumns="repeat(6, 1fr)"
+			gap={2}
+			p={4}
+			// border="solid blue"
+			// justifyItems={"stretch"}
+		>
+			<GridItem
+				h="100%"
+				padding={4}
+				rowSpan={1}
+				colSpan={6}
+				// border="solid magenta"
+			>
+				<Center color="#4a4a4a" w="100%" h="100%">
+					<Heading size="4xl">DIRECTORY</Heading>
+				</Center>
+			</GridItem>
+			{sections.map(({ id, ...otherSectionProps }) => {
+				return <MenuItem key={id} {...otherSectionProps} />;
+			})}
+			<GridItem
+				h="100%"
+				padding={4}
+				rowSpan={1}
+				colSpan={6}
+				// border="solid magenta"
+			/>
+				
+		</Grid>
+	);
+};
+
+{
+	/* 
+	<Grid
+	h="200px"
+	templateRows="repeat(2, 1fr)"
+	templateColumns="repeat(6, 1fr)"
+	gap={4}
+>
+	<GridItem colSpan={2} bg="papayawhip" />
+	<GridItem colSpan={2} bg="papayawhip" />
+	<GridItem colSpan={2} bg="tomato" />
+	<GridItem colSpan={3} bg="papayawhip" />
+	<GridItem colSpan={3} bg="papayawhip" />
+</Grid>; */
 }
 
 export default Directory;
