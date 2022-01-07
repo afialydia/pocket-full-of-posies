@@ -17,7 +17,6 @@ import { auth } from "../../firebase/firebase.utils";
 import ShoppingCart from "../cart";
 
 const Header = () => {
-	
 	return (
 		<Flex
 			h="auto"
@@ -35,18 +34,21 @@ const Header = () => {
 		>
 			<Stack
 				// border="solid teal"
-				maxW={"2xl"}
+				maxW={"11.5rem"}
 				align={"flex-start"}
 				spacing={6}
 				h="90%"
 			>
-				<Heading size={"4xl"}>
-					POCKET
-					<br />
-					FULL OF
-					<br />
-					POSIES
-				</Heading>
+				{" "}
+				<Link className="option" to="/">
+					<Heading fontSize={{base:"5xl", md:"6xl"}}>
+						POCKET
+						<br />
+						FULL OF
+						<br />
+						POSIES
+					</Heading>
+				</Link>
 			</Stack>
 			<Spacer />
 			<Flex
@@ -58,10 +60,10 @@ const Header = () => {
 				className="options"
 				// border="solid"
 			>
-				<Link className="option" to="/">
+				{/* <Link className="option" to="/">
 					<Heading fontSize={{ base: "md", md: "4xl" }}>HOME</Heading>
 				</Link>
-				<Box w="1rem" />
+				<Box w="1rem" /> */}
 				<Link className="option" to="/shop">
 					<Heading fontSize={{ base: "md", md: "4xl" }}>SHOP</Heading>
 				</Link>

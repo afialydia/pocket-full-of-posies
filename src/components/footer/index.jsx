@@ -38,21 +38,7 @@ const Footer = () => {
 		},
 	];
 
-	React.useEffect(() => {
-		function handleScroll() {
-			const yPos = window.scrollY;
-			const isScrollingUp = yPos < lastYPos;
 
-			setShouldShowActions(isScrollingUp);
-			setLastYPos(yPos);
-		}
-
-		window.addEventListener("scroll", handleScroll, false);
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll, false);
-		};
-	}, [lastYPos]);
 	return (
 		<Center
 			as="footer"

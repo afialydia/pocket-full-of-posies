@@ -5,7 +5,9 @@
 		& .background-image {
 			// filter:grayscale(50%);
 			transform: scale(1.1);
+			opacity:.9;
 			transition: all 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
 		}
 
 		& .content {
@@ -13,17 +15,17 @@
 		}
 	}
 
-	&.large {
-		height: 380px;
-	}
+	// &.large {
+	// 	height: 380px;
+	// }
 
-	&:first-child {
-		margin-right: 7.5px;
-	}
+	// &:first-child {
+	// 	margin-right: 7.5px;
+	// }
 
-	&:last-child {
-		margin-left: 7.5px;
-	}
+	// &:last-child {
+	// 	margin-left: 7.5px;
+	// }
 
 	.background-image {
 		width: 100%;
