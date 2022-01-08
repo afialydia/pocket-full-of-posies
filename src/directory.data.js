@@ -1,9 +1,9 @@
 const sections = [
 	{
-		title: "OCCASIONS",
+		title: "SUBSCRIPTIONS",
 		id: 1,
 		imageUrl: "/assets/img/occasions.jpg",
-		linkUrl: "shop/occasions",
+		linkUrl: "shop/subscriptions",
 	},
 	{
 		title: "ARRANGEMENTS",
@@ -18,10 +18,10 @@ const sections = [
 		linkUrl: "shop/nursery",
 	},
 	{
-		title: "PLANT CARE",
+		title: "PLANT ACCESSORIES",
 		id: 4,
 		imageUrl: "assets/img/plant-care.jpg",
-		linkUrl: "shop/plant-care",
+		linkUrl: "shop/plant-accessories",
 		size: "large",
 	},
 	{

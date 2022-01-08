@@ -1,10 +1,10 @@
 const INITIAL_STATE = {
 	sections: [
 		{
-			title: "Occasions",
+			title: "Subscriptions",
 			id: 1,
 			imageUrl: "/assets/img/occasions.jpg",
-			linkUrl: "shop/occasions",
+			linkUrl: "shop/subscriptions",
 			colSpan: 3,
 			rowSpan: 2,
 			height: "15rem",
@@ -28,10 +28,10 @@ const INITIAL_STATE = {
 			height: "15rem",
 		},
 		{
-			title: "Plant Care",
+			title: "Plant Accessories",
 			id: 4,
 			imageUrl: "assets/img/plant-care.jpg",
-			linkUrl: "shop/plant-care",
+			linkUrl: "shop/plant-accessories",
 			colSpan: 3,
 			rowSpan: 2,
 			height: "23.75rem",
@@ -39,7 +39,7 @@ const INITIAL_STATE = {
 		{
 			title: "Consultation",
 			id: 5,
-			imageUrl: "assets/img/consultation.jpg",
+			imageUrl: "assets/img/consultation/consultation.jpg",
 			linkUrl: "shop/consultation",
 			colSpan: 3,
 			rowSpan: 2,

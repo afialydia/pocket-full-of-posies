@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
+import {
+	getFirestore,
+	doc,
+	setDoc,
+	getDoc,
+	writeBatch,
+	collection,
+} from "firebase/firestore";
 import {
 	getAuth,
 	onAuthStateChanged,
@@ -64,7 +71,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 		}
 	}
 
-	console.log(snapShot);
+	// console.log(snapShot);
 	return userRef;
 };
 
@@ -72,22 +79,20 @@ export const addCollectionAndDocuments = async (
 	collectionKey,
 	objectsToAdd
 ) => {
-	const collectionRef = db.collection(collectionKey);
+	const batch = writeBatch(db);
 
-	const batch = db.batch();
-
-	objectsToAdd.forEach((obj) => {
-		const newDocRef = collectionRef.doc();
-		batch.set(newDocRef, obj);
+	objectsToAdd.forEach((element) => {
+		const docRef = doc(collection(db, collectionKey));
+		batch.set(docRef, element);
 	});
 
-	await batch.commit();
+	return await batch.commit();
 };
 
 export const convertCollectionsSnapshotToMap = (collections) => {
 	const transformedCollection = collections.docs.map((doc) => {
 		const { title, items } = doc.data();
-
+console.log('hello')
 		return {
 			id: doc.id,
 			routeName: encodeURI(title.toLowerCase()),
@@ -104,9 +109,13 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 
 export const getCurrentUser = () => {
 	return new Promise((resolve, reject) => {
-		const unsubscribe = onAuthStateChanged(auth,(userAuth) => {
-			unsubscribe();
-			resolve(userAuth);
-		}, reject);
+		const unsubscribe = onAuthStateChanged(
+			auth,
+			(userAuth) => {
+				unsubscribe();
+				resolve(userAuth);
+			},
+			reject
+		);
 	});
 };

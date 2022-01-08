@@ -15,13 +15,17 @@ import Header from "./components/header";
 import { checkUserSession } from "./redux/user/user.actions";
 
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
+import { addCollectionAndDocuments } from "./firebase/firebase.utils";
 
 const App = () => {
 	const currentUser = useSelector(selectCurrentUser);
+	const collectionsArray = useSelector(selectCollectionsForPreview);
 
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		
 		dispatch(checkUserSession());
 	}, [dispatch]);
 
@@ -34,6 +38,7 @@ const App = () => {
 			bgGradient="radial-gradient(circle at 0px 0px, rgb(112,148,132,.5), rgba(245, 245, 245, 0) 36%), linear-gradient(275.1deg, rgba(160,174,192, 0.55) 2.9%, rgba(255, 255, 255, 0) 44.09%), linear-gradient(rgb(221,225,218,.65), rgba(221,225,218, 0.26), rgba(221,225,218, 0.46)), url(https://grainy-gradients.vercel.app/noise.svg)"
 			filter="contrast(95%) brightness(100%)"
 		>
+			{console.log(collectionsArray)}
 			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
