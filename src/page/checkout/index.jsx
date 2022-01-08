@@ -36,7 +36,7 @@ const CheckoutPage = () => {
 			<Center
 				color="#4a4a4a"
 				shadow="lg"
-				background="rgb(239,239,239,.7)"
+				background="rgb(239,239,239,.6)"
 				w={{ base: "100%", md: "85%" }}
 				maxW="50rem"
 				h="100%"
