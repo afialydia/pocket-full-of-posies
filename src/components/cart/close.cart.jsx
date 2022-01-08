@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Flex, Heading, Text, chakra } from "@chakra-ui/react";
+import React from "react";
+import { Flex, Text, chakra } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
@@ -10,7 +10,7 @@ import { signOutStart } from "../../redux/user/user.actions";
 
 const CartCloseButton = ({ onClose, signOutStart, currentUser }) => {
 	return (
-		<Flex  w="100%" justify="space-between" h="15%">
+		<Flex w="100%" justify="space-between" h="15%">
 			{currentUser ? (
 				<chakra.div
 					className="option"
@@ -18,7 +18,16 @@ const CartCloseButton = ({ onClose, signOutStart, currentUser }) => {
 						signOutStart();
 					}}
 				>
-					<Text color="whitesmoke" _hover={{color:"#4a4a4a", fontWeight:"bold"}}>Ready to <chakra.span fontWeight="bold" color="whitesmoke">sign out,</chakra.span> {currentUser.displayName}?</Text>
+					<Text
+						color="whitesmoke"
+						_hover={{ color: "#4a4a4a", fontWeight: "bold" }}
+					>
+						Ready to{" "}
+						<chakra.span fontWeight="bold" color="whitesmoke">
+							sign out,
+						</chakra.span>{" "}
+						{currentUser.displayName}?
+					</Text>
 				</chakra.div>
 			) : (
 				<Text

@@ -8,10 +8,10 @@ import { Flex } from "@chakra-ui/react";
 //files
 import HomePage from "./page/home";
 import ShopPage from "./page/shop";
+import CheckoutPage from "./page/checkout";
 import SignInAndSignUpPage from "./page/sign-in-and-sign-up";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import { auth } from "./firebase/firebase.utils";
 import { checkUserSession } from "./redux/user/user.actions";
 
 import { selectCurrentUser } from "./redux/user/user.selectors";
@@ -38,10 +38,13 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/shop" element={<ShopPage />} />
+				<Route path="/checkout" element={<CheckoutPage />} />
 				<Route
 					exact
 					path="/signin"
-					element={currentUser ? <Navigate to="/" /> : <SignInAndSignUpPage replace />}
+					element={
+						currentUser ? <Navigate to="/" /> : <SignInAndSignUpPage replace />
+					}
 				/>
 			</Routes>
 			<Footer />

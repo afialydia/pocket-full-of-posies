@@ -10,13 +10,14 @@ const SignInAndSignUpPage = () => {
 		setToggle(!toggle);
 	};
 	
-	const togPad = toggle? "13rem" : "17rem"	
+	
 
 	return (
 		<Center
 			justify="space-evenly"
 			p={4}
-			paddingY={{ base: togPad, md: togPad }}
+			paddingTop="17rem"
+			paddingBottom="5rem"
 			minH=" calc(var(--vh, 1vh) * 100)"
 			flexDirection="column"
 		>

@@ -1,14 +1,9 @@
 import React from "react";
-import CartDrawer from "./drawer.cart";
-import CartDropdown from "./dropdown.cart";
+import CartDrawer from "./drawer.cart.jsx";
+import CartItems from "./items.cart.jsx";
 
 const ShoppingCart = () => {
-
-	return (
-		<CartDrawer>
-			<CartDropdown />
-		</CartDrawer>
-	);
+	return <CartDrawer />;
 };
 
 export default ShoppingCart;

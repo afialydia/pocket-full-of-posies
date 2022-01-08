@@ -10,8 +10,9 @@ import {
 } from "@chakra-ui/react";
 import CartIcon from "./icon.cart";
 import CartCloseButton from "./close.cart";
+import CartItems from "./items.cart";
 
-const CartDrawer = ({ children }) => {
+const CartDrawer = () => {
 	const contactRef = useRef();
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -44,7 +45,7 @@ const CartDrawer = ({ children }) => {
 						<Flex direction="column" h="100%" p="1em">
 							<Spacer />
 							<CartCloseButton onClose={onClose} />
-							{children}
+							<CartItems onClose={onClose} />
 						</Flex>
 					</DrawerBody>
 				</DrawerContent>

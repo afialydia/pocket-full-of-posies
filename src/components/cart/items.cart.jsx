@@ -8,18 +8,15 @@ import { toggleCartHidden } from "../../redux/cart/cart.actions";
 import CartItem from "../cart-item";
 import CustomButton from "../custom-button";
 import { useNavigate } from "react-router";
-import { Flex, Center, Text } from "@chakra-ui/react";
+import { Flex, Center} from "@chakra-ui/react";
 
-const CartDropdown = () => {
-	const dispatch = useDispatch();
+const CartItems = ({ onClose }) => {
 	let navigate = useNavigate();
 	const cartItems = useSelector(selectCartItems);
 
-	const btnRef = React.useRef();
 
 	return (
 		<Flex h="100%" direction="column">
-			
 			<Center direction="column" h="100%">
 				{" "}
 				{cartItems.length ? (
@@ -33,6 +30,7 @@ const CartDropdown = () => {
 			<CustomButton
 				onClick={() => {
 					navigate("/checkout");
+					onClose();
 				}}
 			>
 				GO TO CHECKOUT
@@ -41,4 +39,4 @@ const CartDropdown = () => {
 	);
 };
 
-export default CartDropdown;
+export default CartItems;
