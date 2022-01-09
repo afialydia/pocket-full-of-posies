@@ -13,11 +13,10 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
 	}, [fetchCollectionsStart]);
 
 	return (
-		<div className="shop-page" >
-			
+		<div className="shop-page">
 			<Routes>
-				<Route exact path="/" component={CollectionsOverview} />
-				<Route path=':collectionId' component={CollectionPageContainer} />
+				<Route exact path="/" element={<CollectionsOverview />} />
+				<Route path="/:collectionId" element={<CollectionPageContainer />} />
 			</Routes>
 		</div>
 	);

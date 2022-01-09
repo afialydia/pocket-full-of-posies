@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Box, Flex, chakra } from "@chakra-ui/react";
+import { Box, Heading, Flex, chakra, Image, Center, Text } from "@chakra-ui/react";
 
-const CollectionItem = ({ id, name, price, imageUrl }) => (
+const CollectionItem = ({ id, name, price, imageUrl, description }) => (
 	<Flex
 		w={{
 			base: "100%",
@@ -12,29 +12,67 @@ const CollectionItem = ({ id, name, price, imageUrl }) => (
 			base: "100%",
 			// md:"21.875rem"
 		}}
-		minH="30rem"
+		// minH="28rem"
 		p={4}
+		mx={2}
 		align="center"
 		justify="center"
 		bg="rgb(245,245,245,.6)"
 		direction="column"
-		shadow={"sm"}
+		shadow={"md"}
 		// border="solid"
+		color="#4a4a4a"
+		position="relative"
 	>
-		<Box
-			w="100%"
-			h="95%"
+		<Image
+			// w={{ base: "100%", md: "25rem" }}
+			h="90%"
+			maxw="20rem"
+			// position="absolute"
+			objectFit="cover"
 			backgroundSize={"cover"}
 			backgroundPosition={"center"}
 			marginBottom={"5px"}
-			style={{
-				backgroundImage: `url(${imageUrl})`,
-			}}
-			// rounded={"md"}
+			minWidth="auto"
+			src={imageUrl}
 		/>
-		<Flex px={2} w="100%" h="5%" justify="space-between" size="md">
-			<chakra.span marginBottom=".75rem">{name}</chakra.span>
-			<chakra.span>{price}</chakra.span>
+		<Flex
+			h="70%"
+			w="80%"
+			direction="column"
+			p={4}
+			// p={{ base: "1rem", md: "2rem" }}
+			// maxW="85%"
+			
+			// display={{ base: "inline-block", lg: "none" }}
+			position="absolute"
+			background="rgb(245,245,245,.9)"
+			// background="whitesmoke"
+			direction="column"
+			transform={"translate(0px,-5%)"}
+			backdropFilter="blur(2rem)"
+			// zIndex={1}
+			// border="solid green"
+		>
+			<Text h="10%" fontWeight={"bold"}>{name}</Text>
+			<Text
+				sx={{
+					textAlign: " justify",
+					textjustify: "distribute",
+					textAlignLast: "left",
+				}}
+				paddingTop={4}
+				h="80%"
+			>
+				{description}
+			</Text>
+			<Text h="10%" fontWeight="bold" justifySelf="flex-end" textAlign="flex-end"  _hover={{textDecoration:'wavy underline', cursor:'pointer'}}>ADD TO CART</Text>
+		</Flex>
+
+		<Flex w="100%" h="10%" align="center" justify="space-between" size="md">
+			<chakra.span>{name}</chakra.span>
+
+			<chakra.span>$ {price}</chakra.span>
 		</Flex>
 	</Flex>
 );
