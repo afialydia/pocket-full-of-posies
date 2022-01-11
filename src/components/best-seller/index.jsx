@@ -1,64 +1,52 @@
 import React from "react";
-// import { useHistory,useRouteMatch } from "react-router";
-import { useNavigate } from "react-router-dom";
+
 //styles
 import { Heading, Flex, GridItem, Text, Box, Center } from "@chakra-ui/react";
 import CollectionItem from "../collection-item";
 
-const BestSeller = ({img }) => {
-	let navigate = useNavigate();
+const BestSellers = () => {
+	const bestsellers = [
+		{
+			id: 14,
+			description:
+				"One hour class offered online to learn the building blocks of plant care and maintenence.",
+			imageUrl: "assets/img/nursery/nursery.vine.jpg",
+			name: "Tradescantia Starter",
+			price: 35,
+		},
+		{
+			id: 4,
+			description:
+				"Join our Cacti Club to fast track your way to plant parenthood. This purchase is valid for 6 months and includes one small cactus of your choice per month.",
+			imageUrl: "assets/img/subscriptions/subscriptions.4.jpg",
+			name: "Cactus of the Month Club - Small",
+			price: 75,
+		},
+		{
+			description:
+				"Send them something to talk about. Our Modern Floral Arrangements are minimal but exquisite.",
+			id: 7,
+			imageUrl: "assets/img/arrangements/arrangements.avantgarde.jpg",
+			name: "Modern Floral Arrangement",
+			price: 50,
+		},
+	];
 
-	return (
-		// // <GridItem
-		// // 	colSpan={{ base: 6, md: colSpan }}
-		// // 	rowSpan={{ base: 1, md: rowSpan }}
-		// // 	h="auto"
-		// // >
-		// 	<Flex
-		// 		minW="30%"
-		// 		h={"100%"}
-		// 		flex="1 1 auto"
-		// 		align="center"
-		// 		justify="center"
-		// 		overflow="hidden"
-		// 		// className={`${size} menu-item`}
-		// 		bgGradient={"linear(to-br, blackAlpha.600, transparent)"}
-		// 		// onClick={() => navigate(`/${linkUrl}`)}
-		// 	>
-		// 		<Box
-		// 			// className="background-image"
-		// 			backgroundPosition={"center"}
-		// 			backgroundSize={"cover"}
-		// 			// bgImage={`url(${imageUrl})`}
-		// 		/>
-		// 		<Flex
-		// 			// className="content"
-		// 			h="5.625rem"
-		// 			padding="0 1.563rem"
-		// 			direction="column"
-		// 			align="center"
-		// 			justify="center"
-		// 			border="solid black 1px"
-		// 			shadow="2xl"
-		// 		>
-		// 			<Heading as="h1" opacity={1} color="#4a4a4a">
-		// 				best seller{/* {title.toUpperCase()} */}
-		// 			</Heading>{" "}
-		// 			<Text color="black" size={"lg"}>
-		// 				Shop Now
-		// 			</Text>
-		// 		</Flex>
-		// 	</Flex>
-		// // </GridItem>
-		<Center h="100%">
-			<CollectionItem
-				id="1"
-				name="tesr"
-				price="2.33"
-				imageUrl={img}
-			/>
-		 </Center>
-	);
+	return bestsellers.map((item) => (
+		<GridItem
+			h="100%"
+			rowSpan={3}
+			colSpan={{ base: 6, lg: 2 }}
+			// border="solid magenta"
+			key={item.id}
+		>
+			{console.log(item)}
+
+			<Center h="100%">
+				<CollectionItem key={item.id} item={item} imageUrl={item.imageUrl} />
+			</Center>
+		</GridItem>
+	));
 };
 
-export default BestSeller;
+export default BestSellers;

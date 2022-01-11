@@ -25,7 +25,7 @@ import {
 	useMediaQuery,
 } from "@chakra-ui/react";
 import "./about.styles.scss";
-import BestSeller from "../best-seller";
+import BestSellers from "../best-seller";
 
 const About = () => {
 	const [isVariableHeight] = useMediaQuery(
@@ -206,12 +206,13 @@ const About = () => {
 					minH="100%"
 					w={{ base: "100%", md: "80%" }}
 					// minH=" calc(var(--vh, 1vh) * 100)"
-					templateRows={{ base: "repeat(16,1fr)", md: "repeat(6, 1fr)" }}
+					// templateRows={{ base: "repeat(16,1fr)", md: "repeat(4, 1fr)" }}
+					templateRows="repeat(4,1fr)"
 					templateColumns="repeat(6, 1fr)"
 					gap={4}
 					p={{ base: 4 }}
 					margin="0 auto"
-					marginTop="5rem"
+					marginY="5rem"
 					// border="solid blue"
 					justifyItems="stretch"
 					alignItems="stretch"
@@ -227,31 +228,7 @@ const About = () => {
 							<Heading size="4xl"> BEST SELLERS</Heading>
 						</Center>
 					</GridItem>
-
-					<GridItem
-						h="100%"
-						rowSpan={5}
-						colSpan={{ base: 6, lg: 2 }}
-						// border="solid magenta"
-					>
-						<BestSeller img="/assets/img/bs1.jpg" />
-					</GridItem>
-					<GridItem
-						h="100%"
-						rowSpan={5}
-						colSpan={{ base: 6, lg: 2 }}
-						// border="solid magenta"
-					>
-						<BestSeller img="/assets/img/bs3.jpg" />
-					</GridItem>
-					<GridItem
-						h="100%"
-						rowSpan={5}
-						colSpan={{ base: 6, lg: 2 }}
-						// border="solid magenta"
-					>
-						<BestSeller img='/assets/img/bs2.jpg' />
-					</GridItem>
+					<BestSellers />
 				</Grid>
 			</Box>
 		</Flex>
