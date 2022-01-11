@@ -42,10 +42,13 @@ const CartDrawer = () => {
 						background="transparent"
 						filter="contrast(100%) brightness(100%)"
 					>
-						<Flex direction="column" h="100%" p="1em">
-							<Spacer />
-							<CartCloseButton onClose={onClose} />
-							<CartItems onClose={onClose} />
+						<Flex direction="column" h="100%" p="1em" justify="space-between">
+							<Box>
+								<CartCloseButton onClose={onClose} />
+							</Box>
+							<Box h="100%">
+								<CartItems onClose={onClose} />
+							</Box>
 						</Flex>
 					</DrawerBody>
 				</DrawerContent>
