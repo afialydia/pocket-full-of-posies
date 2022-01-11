@@ -1,29 +1,15 @@
-import React, { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
-import { connect } from "react-redux";
+import React from "react";
 
-import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
+import Shop from "../../components/shop";
 
-import CollectionsOverview from "../../components/collections-overview";
-import CollectionPageContainer from "../collection/collection.container";
+import { Flex } from "@chakra-ui/react";
 
-const ShopPage = ({ fetchCollectionsStart, match }) => {
-	useEffect(() => {
-		fetchCollectionsStart();
-	}, [fetchCollectionsStart]);
-
+const ShopPage = () => {
 	return (
-		<div className="shop-page">
-			<Routes>
-				<Route exact path="/" element={<CollectionsOverview />} />
-				<Route path="/:collectionId" element={<CollectionPageContainer />} />
-			</Routes>
-		</div>
+		<Flex direction="column" minH="100%">
+			<Shop />
+		</Flex>
 	);
 };
 
-const mapDispatchToProps = (dispatch) => ({
-	fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
-});
-
-export default connect(null, mapDispatchToProps)(ShopPage);
+export default ShopPage;

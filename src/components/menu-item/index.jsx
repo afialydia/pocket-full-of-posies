@@ -23,7 +23,7 @@ const MenuItem = ({ title, imageUrl, size, linkUrl, colSpan, rowSpan }) => {
 				overflow="hidden"
 				className={`${size} menu-item`}
 				bgGradient={"linear(to-br, blackAlpha.600, transparent)"}
-				onClick={() => navigate(`/${linkUrl}`)}
+				onClick={() => navigate(`shop/${linkUrl}`)}
 			>
 				<Box
 					className="background-image"
