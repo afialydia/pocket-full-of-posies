@@ -6,28 +6,24 @@ import { selectDirectorySections } from "../../redux/directory/directory.selecto
 
 //styles
 import { Grid, GridItem, Heading, Center } from "@chakra-ui/react";
-// import "./homepage.styles.scss";
 
 const Directory = () => {
 	const sections = useSelector(selectDirectorySections);
 	return (
 		<Grid
 			w={{ base: "100%", md: "80%" }}
-			// maxW="85rem"
-			// minH=" calc(var(--vh, 1vh) * 100)"
+		
 			templateRows="repeat(5, 1fr)"
 			templateColumns="repeat(6, 1fr)"
 			gap={2}
 			p={4}
-			// border="solid blue"
-			// justifyItems={"stretch"}
+		
 		>
 			<GridItem
 				h="100%"
 				padding={4}
 				rowSpan={1}
 				colSpan={6}
-				// border="solid magenta"
 			>
 				<Center color="#4a4a4a" w="100%" h="100%">
 					<Heading size="4xl">DIRECTORY</Heading>
@@ -41,7 +37,6 @@ const Directory = () => {
 				padding={4}
 				rowSpan={1}
 				colSpan={6}
-				// border="solid magenta"
 			/>
 				
 		</Grid>

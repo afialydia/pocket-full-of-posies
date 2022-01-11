@@ -69,7 +69,7 @@ const CheckoutPage = () => {
 				)}
 
 				<Box marginLeft="auto" fontSize="2xl">
-					<Text>Total: ${total}</Text>
+					<Text>Total: ${total}.00</Text>
 				</Box>
 				<StripeCheckoutButton price={total} />
 			</Center>
