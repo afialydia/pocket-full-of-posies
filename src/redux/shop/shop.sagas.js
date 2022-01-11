@@ -14,14 +14,12 @@ import {
 import ShopActionTypes from "./shop.types";
 
 export function* fetchCollectionsAsync() {
-	yield console.log("I am fired");
 
 	try {
 		const collectionRef = collection(db,"collections");
 		
 		const snapshot = yield getDocs(collectionRef)
 
-		console.log("here at snap")
 		const collectionsMap = yield call(
 			convertCollectionsSnapshotToMap,
 			snapshot
