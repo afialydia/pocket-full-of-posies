@@ -13,8 +13,8 @@ import "./index.scss";
 
 //files
 import App from "./App.jsx";
-import { store,persistor } from "./redux/store";
-import ScrollUp from "./utils/scroll-up";
+import { store,persistor } from "./redux/store.js";
+import ScrollUp from "./utils/scroll-up.js";
 
 
 const rootElement = document.getElementById("root");
