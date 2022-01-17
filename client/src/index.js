@@ -12,7 +12,7 @@ import Fonts from "./theme/fonts.jsx";
 import "./index.scss";
 
 //files
-import App from "./App";
+import App from "./App.js";
 import { store,persistor } from "./redux/store";
 import ScrollUp from "./utils/scroll-up";
 
