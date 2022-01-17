@@ -1,6 +1,7 @@
 {
 	"name": "pocket-full-of-posies-server",
 	"version": "1.0.0",
+	"type": "module",
 	"engines": {
 		"node": "12.16.1",
 		"npm": "8.1.4"
