@@ -2,10 +2,8 @@ import React from "react";
 import {
 	Text,
 	Flex,
-	Box,
 	Center,
-chakra,
-	useBreakpointValue,
+	chakra,
 	Button,
 	Icon,
 	Link as ChakraLink,
@@ -13,11 +11,6 @@ chakra,
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
-
-	const [lastYPos, setLastYPos] = React.useState(0);
-	const [shouldShowActions, setShouldShowActions] = React.useState(true);
-
-	const display = useBreakpointValue({ base: "none", sm: "flex" });
 	const socialAccounts = [
 		{ icon: FaGithub, path: "https://github.com/afialydia", title: "Github" },
 		{
@@ -37,23 +30,13 @@ const Footer = () => {
 			as="footer"
 			display="flex"
 			flexDirection="column"
-			// marginTop=".75rem"
 			height="40%"
 			minH="12rem"
 			background={"#f0f0ee "}
 			color={"#4d4d4d"}
 			className="footer"
 		>
-			<Flex
-				paddingTop="8px"
-				alignItems="center"
-				color="#4d4d4d"
-
-				// justify="center"
-				// border="solid"
-				// borderTop="solid"
-				// borderBottom="solid"
-			>
+			<Flex paddingTop="8px" alignItems="center" color="#4d4d4d">
 				{socialAccounts.map((item, index) => (
 					<ChakraLink
 						href={item.path}

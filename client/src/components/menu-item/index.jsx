@@ -1,5 +1,4 @@
 import React from "react";
-// import { useHistory,useRouteMatch } from "react-router";
 import { useNavigate } from "react-router-dom";
 //styles
 import { Heading, Flex, GridItem, Text, Box } from "@chakra-ui/react";
@@ -38,7 +37,6 @@ const MenuItem = ({ title, imageUrl, size, linkUrl, colSpan, rowSpan }) => {
 					direction="column"
 					align="center"
 					justify="center"
-					// border="solid black 1px"
 					shadow="2xl"
 				>
 					<Heading as="h1" opacity={1} color="#4a4a4a" 

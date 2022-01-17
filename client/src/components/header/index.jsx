@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router";
-
+import { useDispatch, useSelector } from "react-redux";
 import {
 	Flex,
 	Heading,
@@ -14,9 +13,16 @@ import {
 import "./header.styles.scss";
 
 import ShoppingCart from "../cart";
+import { selectSessionID } from "../../redux/cart/cart.selectors";
+import { resolvePurchaseSession } from "../../redux/cart/cart.actions";
 
 const Header = () => {
-	let navigate = useNavigate();
+	const dispatch = useDispatch();
+	const checkoutSession = useSelector(selectSessionID);
+
+	let closeSession = checkoutSession
+		? () => dispatch(resolvePurchaseSession())
+		: null;
 
 	return (
 		<Flex
@@ -30,16 +36,9 @@ const Header = () => {
 			paddingTop={useBreakpointValue({ base: 4, md: "1.6rem" })}
 			paddingX={useBreakpointValue({ base: 4, md: "1.6rem" })}
 		>
-			<Stack
-				// border="solid teal"
-				maxW={"11.5rem"}
-				align={"flex-start"}
-				spacing={6}
-				h="90%"
-			>
-				{" "}
+			<Stack maxW={"11.5rem"} align={"flex-start"} spacing={6} h="90%">
 				<Link className="option" to="/">
-					<Heading fontSize={{ base: "5xl", md: "6xl" }}>
+					<Heading fontSize={{ base: "5xl", md: "6xl" }} onClick={closeSession}>
 						POCKET
 						<br />
 						FULL OF
@@ -49,19 +48,12 @@ const Header = () => {
 				</Link>
 			</Stack>
 			<Spacer />
-			<Flex
-				w="50%"
-				h="100%"
-				// align="center"
-				justify="end"
-				align="start"
-				className="options"
-				// border="solid"
-			>
+			<Flex w="50%" h="100%" justify="end" align="start" className="options">
 				<Link className="option" to="/shop">
 					<Heading
 						fontSize={{ base: "md", md: "4xl" }}
 						_hover={{ cursor: "pointer", textDecoration: "underline" }}
+						onClick={closeSession}
 					>
 						SHOP
 					</Heading>
@@ -71,6 +63,7 @@ const Header = () => {
 					<Heading
 						fontSize={{ base: "md", md: "4xl" }}
 						_hover={{ cursor: "pointer", textDecoration: "underline" }}
+						onClick={closeSession}
 					>
 						ABOUT
 					</Heading>

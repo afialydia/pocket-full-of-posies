@@ -11,18 +11,18 @@ import ShopPage from "./page/shop";
 import CheckoutPage from "./page/checkout";
 import SignInAndSignUpPage from "./page/sign-in-and-sign-up";
 import CollectionPage from "./page/collection";
+import OrderConfirmationPage from "./page/order-confirmation";
 
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { checkUserSession } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
-import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
-import { addCollectionAndDocuments } from "./firebase/firebase.utils";
 import { fetchCollectionsStart } from "./redux/shop/shop.actions";
+import { selectSessionID } from "./redux/cart/cart.selectors";
 
 const App = () => {
 	const currentUser = useSelector(selectCurrentUser);
-	const collectionsArray = useSelector(selectCollectionsForPreview);
+	const sessionID = useSelector(selectSessionID);
 
 	const dispatch = useDispatch();
 
@@ -48,6 +48,12 @@ const App = () => {
 					<Route index={false} path=":linkUrl" element={<CollectionPage />} />
 				</Route>
 				<Route path="/checkout" element={<CheckoutPage />} />
+				<Route
+					path="/order-confirmation"
+					element={
+						!sessionID ? <Navigate to="/" /> : <OrderConfirmationPage replace />
+					}
+				/>
 				<Route
 					exact
 					path="/signin"

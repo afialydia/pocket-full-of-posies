@@ -32,8 +32,6 @@ const ShopPreview = ({ title, routeName, items }) => {
 				}}
 				templateRows={{
 					base: "repeat(6,1fr)",
-					// md: "repeat(3, 1fr)",
-					// lg: "repeat(4, 1fr)",
 				}}
 				gap={4}
 				p={4}
@@ -44,10 +42,9 @@ const ShopPreview = ({ title, routeName, items }) => {
 					.filter((item, inx) => inx < variant)
 					.map((item) => (
 						<GridItem
-							h="100%"
-							rowSpan={{ base: 4, md: 6 }}
+							h="auto"
+							rowSpan={6}
 							colSpan={1}
-							// border="solid magenta"
 							key={item.id}
 						>
 							<CollectionItem

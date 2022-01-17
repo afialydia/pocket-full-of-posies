@@ -17,7 +17,6 @@ export default function Hero() {
 			minH="100%"
 			position="relative"
 			overflow="hidden"
-			// bgGradient="linear(to-b, transparent,transparent, white)"
 		>
 			<video className="video-bg" autoPlay muted>
 				<source src="assets/posies.mp4" type="video/mp4" />

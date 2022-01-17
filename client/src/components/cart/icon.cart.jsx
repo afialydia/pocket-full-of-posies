@@ -1,6 +1,5 @@
-import { Image, Heading, Flex, chakra,useBreakpointValue } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-// import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
+import { Heading } from "@chakra-ui/react";
+
 import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import { useSelector } from "react-redux";
 

@@ -10,8 +10,6 @@ const breakpoints = createBreakpoints({
 	"2xl": "96em",
 });
 
-// let vh = window.innerHeight * 0.01
-// document.documentElement.style.setProperty("--vh", `${vh}px`)
 
 const styles = {
 	global: (props) => ({
@@ -50,4 +48,3 @@ const theme = extendTheme({
 
 export default theme;
 
-// 4a4a4a

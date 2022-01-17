@@ -74,7 +74,6 @@ export function* signInWithEmail({ payload: { email, password } }) {
 export function* isUserAuthenticated() {
 	try {
 		const {userAuth} = yield getCurrentUser();
-		// console.log(userAuth)
 		if (!userAuth) return;
 		yield getSnapshotFromUserAuth(userAuth);
 	} catch (error) {

@@ -14,11 +14,9 @@ const WithSpinner = (WrappedComponent) => {
 					}}
 					initial={{
 						rotate: 0,
-						// x: -100
 					}}
 					animate={{
 						rotate: 180,
-						// x: 100
 					}}
 					transition={{
 						type: "tween",

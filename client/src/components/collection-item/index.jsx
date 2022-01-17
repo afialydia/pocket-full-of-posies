@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-	Box,
-	Heading,
-	Flex,
-	chakra,
-	Image,
-	Center,
-	Text,
-	useToast,
-} from "@chakra-ui/react";
+import { Flex, chakra, Image, Center, Text, useToast } from "@chakra-ui/react";
 import { addItem } from "../../redux/cart/cart.actions";
-import { FaRegBell } from "react-icons/fa";
 
 const CollectionItem = ({ item, imageUrl }) => {
 	const dispatch = useDispatch();
@@ -24,7 +14,7 @@ const CollectionItem = ({ item, imageUrl }) => {
 		<Flex
 			key={id}
 			w="100%"
-			h="100%"
+			h="auto"
 			p={4}
 			align="center"
 			justify="center"
@@ -36,12 +26,9 @@ const CollectionItem = ({ item, imageUrl }) => {
 			maxW="450px"
 		>
 			<Image
-				// w={{ base: "100%", md: "25rem" }}
 				h="90%"
 				minH={{ base: "31.25rem", md: "19.688rem" }}
 				maxH="31.25rem"
-				// maxW="425px"
-				// position="absolute"
 				objectFit="cover"
 				backgroundSize={"cover"}
 				backgroundPosition={"center"}
@@ -57,12 +44,10 @@ const CollectionItem = ({ item, imageUrl }) => {
 				position="absolute"
 				background="rgb(245,245,245,.9)"
 				direction="column"
-				// transform={"translate(60%,260%)"}
 				bottom={20}
 				left="auto"
 				right={7}
 				backdropFilter="blur(2rem)"
-				// border="solid green"
 				borderRadius={"100% 32% 58% 79% / 62% 87% 44% 65%"}
 			>
 				<chakra.span onClick={() => setShowInfo(!showInfo)}>
@@ -88,15 +73,8 @@ const CollectionItem = ({ item, imageUrl }) => {
 				transform={"translate(0px,-5%)"}
 				backdropFilter="blur(2rem)"
 				display={showInfo ? "inline-block" : "none"}
-				// border="solid green"
 			>
-				<Flex
-					h="10%"
-					fontWeight="bold"
-					// border="solid"
-					justify="space-between"
-					align="center"
-				>
+				<Flex h="10%" fontWeight="bold" justify="space-between" align="center">
 					<Text>{name}</Text>
 					<chakra.span onClick={() => setShowInfo(!showInfo)} paddingRight={2}>
 						<Text _hover={{ cursor: "pointer", textDecoration: "underline" }}>
@@ -126,12 +104,12 @@ const CollectionItem = ({ item, imageUrl }) => {
 						_hover={{ cursor: "pointer", textDecoration: "underline" }}
 						onClick={() => {
 							dispatch(addItem(item));
+							setShowInfo(!showInfo);
 							toast({
 								title: `${name} added to cart`,
 								position: "bottom-right",
 								isClosable: true,
-								status: "success"
-							
+								status: "success",
 							});
 						}}
 					>

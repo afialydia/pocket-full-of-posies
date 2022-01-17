@@ -19,10 +19,6 @@ import {
 
 import { selectCurrentUser } from "../redux/user/user.selectors";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyDCvV0BtlPHizmzKQSBkBow1PN7IrD8Ed0",
 	authDomain: "pocket-full-of-posies-demo.firebaseapp.com",
@@ -71,7 +67,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 		}
 	}
 
-	// console.log(snapShot);
 	return userRef;
 };
 

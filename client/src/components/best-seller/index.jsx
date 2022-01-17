@@ -1,7 +1,7 @@
 import React from "react";
 
 //styles
-import { Heading, Flex, GridItem, Text, Box, Center } from "@chakra-ui/react";
+import { GridItem, Center } from "@chakra-ui/react";
 import CollectionItem from "../collection-item";
 
 const BestSellers = () => {
@@ -33,13 +33,7 @@ const BestSellers = () => {
 	];
 
 	return bestsellers.map((item) => (
-		<GridItem
-			h="100%"
-			rowSpan={3}
-			colSpan={{ base: 6, lg: 2 }}
-			// border="solid magenta"
-			key={item.id}
-		>
+		<GridItem h="100%" rowSpan={3} colSpan={{ base: 6, lg: 2 }} key={item.id}>
 			<Center h="100%">
 				<CollectionItem key={item.id} item={item} imageUrl={item.imageUrl} />
 			</Center>

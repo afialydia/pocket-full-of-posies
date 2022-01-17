@@ -35,7 +35,7 @@ const CartDrawer = () => {
 					background="linear-gradient(
     to right bottom,
     rgba(245,245,245, 0.4),
-    rgba(74,163,147, 0.3))"
+    rgba(113,139,156, 0.3))"
 					filter="contrast(100%) brightness(100%)"
 				>
 					<DrawerBody

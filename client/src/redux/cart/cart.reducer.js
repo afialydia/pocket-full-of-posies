@@ -4,6 +4,8 @@ import { addItemToCart, removeItemFromCart } from "./cart.utils";
 const INITIAL_STATE = {
 	hidden: true,
 	cartItems: [],
+	purchasedItems: [],
+	sessionID: null,
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -30,11 +32,24 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 					(cartItem) => cartItem.id !== action.payload.id
 				),
 			};
+		case CartActionTypes.PULL_PURCHASED:
+			return {
+				...state,
+				purchasedItems: state.cartItems,
+				sessionID: action.payload,
+			};
+		case CartActionTypes.RESOLVE_PURCHASE:
+			return {
+				...state,
+				purchasedItems: [],
+				sessionID: null,
+			};
 		case CartActionTypes.CLEAR_CART:
 			return {
 				...state,
 				cartItems: [],
 			};
+
 		default:
 			return state;
 	}

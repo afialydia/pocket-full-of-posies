@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Flex, chakra, Heading, Center, Text } from "@chakra-ui/react";
+import { Heading, Center } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 
 const SeeFullCollection = ({ title, routeName }) => {
@@ -11,13 +11,12 @@ const SeeFullCollection = ({ title, routeName }) => {
 			w="100%"
 			h="100%"
 			p={4}
-			mx={2}
+			mx={{ base: 0, md: 2 }}
 			align="center"
 			justify="center"
 			bg="rgb(245,245,245,.6)"
 			direction="column"
 			shadow={"md"}
-			// border="solid"
 			color="#4a4a4a"
 			position="relative"
 		>
@@ -30,7 +29,6 @@ const SeeFullCollection = ({ title, routeName }) => {
 				minWidth="auto"
 				flexDirection="column"
 				p={4}
-				// position="absolute"
 				background="rgb(245,245,245,.9)"
 				direction="column"
 				backdropFilter="blur(2rem)"

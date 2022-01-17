@@ -1,17 +1,30 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import CheckoutItem from "../../components/checkout-item";
-import StripeCheckoutButton from "../../components/stripe-button";
 import {
 	selectCartItems,
 	selectCartTotal,
 } from "../../redux/cart/cart.selectors";
 
-import { Flex, Center, Heading, chakra, Box, Text } from "@chakra-ui/react";
+import {
+	Flex,
+	Center,
+	Heading,
+	chakra,
+	Box,
+	Text,
+	Button,
+} from "@chakra-ui/react";
+import axios from "axios";
+import { pullPurchasedItems } from "../../redux/cart/cart.actions";
 
 const CheckoutPage = () => {
+	const dispatch = useDispatch()
 	const cartItems = useSelector(selectCartItems);
 	const total = useSelector(selectCartTotal);
+	let checkoutItems = [];
+
+	cartItems.map(({ id, quantity }) => checkoutItems.push({ id, quantity }));
 
 	const HeaderBlock = ({ title, ...otherProps }) => {
 		return (
@@ -23,6 +36,26 @@ const CheckoutPage = () => {
 		);
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		axios
+			.post("/create-checkout-session", {
+				body: { items: checkoutItems },
+			})
+			.then((res) => {
+				if (res.status === 200) return res;
+				return res.json().then((json) => Promise.reject(json));
+			})
+			.then(({ data }) => {
+				dispatch(pullPurchasedItems(data.id))
+				window.location = data.url;
+			})
+			.catch((e) => {
+				console.error("this is the error:", e);
+			});
+
+	};
+
 	return (
 		<Center
 			justify="space-evenly"
@@ -31,7 +64,6 @@ const CheckoutPage = () => {
 			paddingBottom="5rem"
 			minH=" calc(var(--vh, 1vh) * 100)"
 			flexDirection="column"
-			// border="solid red"
 		>
 			<Center
 				color="#4a4a4a"
@@ -71,7 +103,9 @@ const CheckoutPage = () => {
 				<Box marginLeft="auto" fontSize="2xl">
 					<Text>Total: ${total}.00</Text>
 				</Box>
-				<StripeCheckoutButton price={total} />
+				<form onSubmit={handleSubmit}>
+					<Button _hover={{textDecoration:"underline"}} type="submit">PAY NOW</Button>
+				</form>
 			</Center>
 			<Center
 				m={4}
@@ -80,7 +114,6 @@ const CheckoutPage = () => {
 				background="rgb(240,97,54,.9)"
 				textAlign="center"
 				fontSize="lg"
-				
 			>
 				<Text>
 					*Test payments with these credentials*

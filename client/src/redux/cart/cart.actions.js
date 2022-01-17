@@ -21,3 +21,12 @@ export const clearItemFromCart = (item) => ({
 export const clearCart = () => ({
 	type: CartActionTypes.CLEAR_CART,
 });
+
+export const pullPurchasedItems = (sessionID) => ({
+	type: CartActionTypes.PULL_PURCHASED,
+	payload: sessionID,
+});
+
+export const resolvePurchaseSession = () => ({
+	type: CartActionTypes.RESOLVE_PURCHASE
+});

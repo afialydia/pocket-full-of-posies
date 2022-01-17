@@ -20,7 +20,6 @@ const CollectionOverview = () => {
 			h="100%"
 			minH=" calc(var(--vh, 1vh) * 100)"
 			justify="space-evenly"
-			// border="solid red"
 		>
 			<Collection collection={collection} />
 		</Flex>
