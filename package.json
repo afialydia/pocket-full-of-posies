@@ -1,5 +1,5 @@
 {
-	"name": "pocket=full-of-posies-server",
+	"name": "pocket-full-of-posies-server",
 	"version": "1.0.0",
 	"engines": {
 		"node": "12.16.1",
@@ -22,8 +22,6 @@
 	},
 	"devDependencies": {
 		"concurrently": "^4.0.1",
-		"eslint": "^8.7.0",
-		"eslint-config-react-app": "^7.0.0",
 		"nodemon": "^1.19.1"
 	}
 }
