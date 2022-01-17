@@ -11,13 +11,10 @@ import {
 	getAuth,
 	onAuthStateChanged,
 	GoogleAuthProvider,
-	updateProfile,
 	signInWithPopup,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
 } from "firebase/auth";
-
-import { selectCurrentUser } from "../redux/user/user.selectors";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyDCvV0BtlPHizmzKQSBkBow1PN7IrD8Ed0",
