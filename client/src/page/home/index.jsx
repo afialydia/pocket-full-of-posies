@@ -12,25 +12,28 @@ const HomePage = () => {
 	return (
 		<Flex width="100%" h="100%" className="App" direction="column">
 			<Grid
-				templateColumns="1fr"
-				templateRows="repeat(1fr,4)"
+				// templateColumns="1fr"
+				// templateRows="repeat(3, 1fr)"
 				placeItems="center stretch"
 				h="100%"
 				w="100%"
+				// area=" 2 / 1 / 2 / 4"
 			>
 				<GridItem rowSpan={1} colSpan={1} height=" calc(var(--vh, 1vh) * 100)">
 					<Hero />
 				</GridItem>
 				<GridItem
 					id="about"
-					rowSpan={2}
+					rowSpan={1}
 					colSpan={1}
-					minH=" calc(var(--vh, 1vh) * 150)"
+					// minH=" calc(var(--vh, 1vh) * 150)"
 				>
 					<About />
 				</GridItem>
 
-				<GridItem rowSpan={1} colSpan={1} minH=" calc(var(--vh, 1vh) * 100)">
+				<GridItem rowSpan={1} colSpan={1} 
+				// minH=" calc(var(--vh, 1vh) * 100)"
+				>
 					<Center h="100%">
 						<Directory />
 					</Center>
