@@ -30,14 +30,11 @@ const ShopPreview = ({ title, routeName, items }) => {
 					md: "repeat(3, 1fr)",
 					lg: "repeat(4, 1fr)",
 				}}
-				templateRows={{
-					base: "repeat(2,fr)",
-					md:"repeat(6,1fr)",
-				}}
+				
 				gap={4}
 				p={4}
 				h={{ base: "100%" }}
-				direction={{ base: "column", md: "row" }}
+				// direction={{ base: "column", md: "row" }}
 			>
 				{items
 					.filter((item, inx) => inx < variant)

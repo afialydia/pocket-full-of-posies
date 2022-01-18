@@ -14,7 +14,7 @@ const ShopOverview = () => {
 			marginTop={{ base: "15rem", md: "20rem" }}
 			padding={4}
 			h="100%"
-			minH=" calc(var(--vh, 1vh) * 250)"
+			// minH=" calc(var(--vh, 1vh) * 250)"
 			justify="space-evenly"
 		>
 			{collections.map(({ id, ...otherCollectionProps }) => {

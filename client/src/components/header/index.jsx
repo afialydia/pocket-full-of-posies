@@ -30,13 +30,13 @@ const Header = () => {
 			w="100%"
 			justify="space-between"
 			align="flex-start"
-			position="fixed"
+			position="absolute"
 			zIndex={6}
 			top="0"
 			paddingTop={useBreakpointValue({ base: 4, md: "1.6rem" })}
 			paddingX={useBreakpointValue({ base: 4, md: "1.6rem" })}
 		>
-			<Stack maxW={"11.5rem"} align={"flex-start"} spacing={6} h="90%">
+			<Stack maxW={"11.5rem"} align={"flex-start"} spacing={6} h="100%">
 				<Link className="option" to="/">
 					<Heading fontSize={{ base: "5xl", md: "6xl" }} onClick={closeSession}>
 						POCKET
