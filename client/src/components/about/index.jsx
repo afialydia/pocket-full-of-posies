@@ -25,16 +25,15 @@ const About = () => {
 
 	return (
 		<Flex
-			justify={"space-between"}
 			align="center"
 			h="100%"
 			flexDir="column"
 			color="#4a4a4a"
 			w="100%"
-			wrap="wrap"
+			// wrap="wrap"
 			paddingTop={useBreakpointValue({ base: 4, md: "1.6rem" })}
 		>
-			<Center grow={2} flexDirection="column" w="100%" h="100%" minH={{base:'750px'}} >
+			<Center flexDirection="column" w="100%" h="100%" minH={{ base: "750px" }}>
 				<Center flexDirection="column">
 					<Heading textAlign={"center"} size="4xl">
 						DAILY FLORAL DELIVERY
@@ -66,7 +65,7 @@ const About = () => {
 						w="100%"
 					>
 						<Center
-							position="relative"
+							// position="relative"
 							w="100%"
 							h="100%"
 							p={4}
@@ -86,6 +85,7 @@ const About = () => {
 									base: "none",
 									md: "47% 53% 67% 33% / 30% 47% 53% 70% ",
 								}}
+								position="relative"
 							/>
 							<Flex
 								h="auto"
