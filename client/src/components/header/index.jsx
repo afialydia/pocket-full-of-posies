@@ -36,9 +36,9 @@ const Header = () => {
 			paddingTop={useBreakpointValue({ base: 4, md: "1.6rem" })}
 			paddingX={useBreakpointValue({ base: 4, md: "1.6rem" })}
 		>
-			<Stack maxW={"11.5rem"} align={"flex-start"} spacing={6} h="100%">
+			<Stack maxW={"11.5rem"} align={"flex-start"} h="100%">
 				<Link className="option" to="/">
-					<Heading fontSize={{ base: "5xl", md: "6xl" }} onClick={closeSession}>
+					<Heading fontSize={{ base: "4xl", md: "6xl" }} onClick={closeSession}>
 						POCKET
 						<br />
 						FULL OF
@@ -48,10 +48,18 @@ const Header = () => {
 				</Link>
 			</Stack>
 			<Spacer />
-			<Flex w="50%" h="100%" justify="end" align="start" className="options">
+			<Flex
+				w={{ base: "60%", md: "50%" }}
+				h="100%"
+				justify="end"
+				// align="center"
+				// border="solid"
+				className="options"
+				paddingTop="2px"
+			>
 				<Link className="option" to="/shop">
 					<Heading
-						fontSize={{ base: "md", md: "4xl" }}
+						fontSize={{ base: "xl", md: "4xl" }}
 						_hover={{ cursor: "pointer", textDecoration: "underline" }}
 						onClick={closeSession}
 					>
@@ -61,7 +69,7 @@ const Header = () => {
 				<Box w="1rem" />
 				<chakra.a className="option" href="/#about">
 					<Heading
-						fontSize={{ base: "md", md: "4xl" }}
+						fontSize={{ base: "xl", md: "4xl" }}
 						_hover={{ cursor: "pointer", textDecoration: "underline" }}
 						onClick={closeSession}
 					>

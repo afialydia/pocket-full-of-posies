@@ -1,6 +1,8 @@
 import React from "react";
+import axios from "axios";
 import { useSelector,useDispatch } from "react-redux";
 import CheckoutItem from "../../components/checkout-item";
+import CustomButton from "../../components/custom-button";
 import {
 	selectCartItems,
 	selectCartTotal,
@@ -13,9 +15,7 @@ import {
 	chakra,
 	Box,
 	Text,
-	Button,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { pullPurchasedItems } from "../../redux/cart/cart.actions";
 
 const CheckoutPage = () => {
@@ -104,7 +104,12 @@ const CheckoutPage = () => {
 					<Text>Total: ${total}.00</Text>
 				</Box>
 				<form onSubmit={handleSubmit}>
-					<Button _hover={{textDecoration:"underline"}} type="submit">PAY NOW</Button>
+					<CustomButton
+						style={{ width: "100%" }}
+					>
+						PAY NOW
+					</CustomButton>
+					
 				</form>
 			</Center>
 			<Center

@@ -25,7 +25,8 @@ const CartDrawer = () => {
 				isOpen={isOpen}
 				finalFocusRef={contactRef}
 				preserveScrollBarGap
-				isFullHeight
+				// isFullHeight
+				minH=" calc(var(--vh, 1vh) * 100)"
 				size="md"
 				padding=".25rem"
 			>
