@@ -1,20 +1,20 @@
 import React from "react";
+import BestSellers from "../best-seller";
 
 //styles
 import {
-	Grid,
-	GridItem,
+	Box,
 	Center,
 	Flex,
-	Box,
+	Grid,
+	GridItem,
 	Heading,
+	Image,
 	Text,
 	useBreakpointValue,
-	Image,
 	useMediaQuery,
 } from "@chakra-ui/react";
 import "./about.styles.scss";
-import BestSellers from "../best-seller";
 
 const About = () => {
 	const [isVariableHeight] = useMediaQuery(
@@ -25,16 +25,15 @@ const About = () => {
 
 	return (
 		<Flex
-			justify={"space-between"}
 			align="center"
 			h="100%"
 			flexDir="column"
 			color="#4a4a4a"
 			w="100%"
-			wrap="wrap"
+			// wrap="wrap"
 			paddingTop={useBreakpointValue({ base: 4, md: "1.6rem" })}
 		>
-			<Center grow={2} flexDirection="column" w="100%" h="100%">
+			<Center flexDirection="column" w="100%" h="100%" minH={{ base: "750px" }}>
 				<Center flexDirection="column">
 					<Heading textAlign={"center"} size="4xl">
 						DAILY FLORAL DELIVERY
@@ -66,7 +65,7 @@ const About = () => {
 						w="100%"
 					>
 						<Center
-							position="relative"
+							// position="relative"
 							w="100%"
 							h="100%"
 							p={4}
@@ -86,6 +85,7 @@ const About = () => {
 									base: "none",
 									md: "47% 53% 67% 33% / 30% 47% 53% 70% ",
 								}}
+								position="relative"
 							/>
 							<Flex
 								h="auto"
@@ -100,24 +100,22 @@ const About = () => {
 								backdropFilter="blur(2rem)"
 							>
 								<Heading textAlign={"center"} h="auto">
-									About our shop!
+									ABOUT OUR SHOP
 								</Heading>
 								<Text
 									p={4}
 									sx={{
 										textAlign: " justify",
-										textjustify: "distribute",
 										textAlignLast: "left",
 									}}
 									fontSize="xl"
 								>
 									Pocket Full of Posies is an online floral delivery agency
 									based in Baltimore, Maryland. Shop from our wide selection of
-									floral designs, bountiful bouquets, and other creative floral
-									arrangements to send a meaningful gift in MD from a floral
-									artist. Be prepared with the best gift for memorable days like
-									Valentine’s Day and Mother’s Day, when deciding on a gift can
-									be tough.{" "}
+									floral designs, bouquets, and other creative arrangements to
+									send a meaningful gift in MD from a floral artist. Be prepared
+									with the best gift for memorable days like Valentine’s Day and
+									Mother’s Day, when deciding on a gift can be tough.{" "}
 								</Text>
 							</Flex>
 						</Center>
@@ -134,13 +132,12 @@ const About = () => {
 								direction="column"
 							>
 								<Heading textAlign={"center"} h="auto">
-									About our shop!
+									ABOUT OUR SHOP
 								</Heading>
 								<Text
 									p="1rem"
 									sx={{
 										textAlign: " justify",
-										textjustify: "distribute",
 										textAlignLast: "left",
 									}}
 									fontSize="xl"
@@ -149,14 +146,14 @@ const About = () => {
 									bouquets, and other creative floral arrangements to send a
 									meaningful gift in MD from a floral artist. Be prepared with
 									the best gift for memorable days like Valentine’s Day and
-									Mother’s Day, when deciding on a gift can be tough.{" "}
+									Mother’s Day, when deciding on a gift can be tough.
 								</Text>
 							</Flex>
 						</Center>
 					</Flex>
 				</Center>
 			</Center>
-			<Box flexDirection="column" minH="60vh" w="100%">
+			<Box flexDirection="column" h="100%" w="100%">
 				<Grid
 					minH="100%"
 					w={{ base: "100%", md: "80%" }}
@@ -165,7 +162,7 @@ const About = () => {
 					gap={4}
 					p={{ base: 4 }}
 					margin="0 auto"
-					marginY="5rem"
+					marginY="2.5rem"
 					justifyItems="stretch"
 					alignItems="stretch"
 				>

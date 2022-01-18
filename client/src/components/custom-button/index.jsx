@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Text} from '@chakra-ui/react';
 import "./custom-button.styles.scss";
 
 const CustomButton = ({ children, isGoogleSignIn,...otherProps }) => (
@@ -7,7 +7,7 @@ const CustomButton = ({ children, isGoogleSignIn,...otherProps }) => (
 		className={`${isGoogleSignIn ? "google-sign-in" : ""} custom-button`}
 		{...otherProps}
 	>
-		{children}
+		<Text>{children}</Text> 
 	</button>
 );
 

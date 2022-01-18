@@ -20,17 +20,24 @@ const CartItems = ({ onClose }) => {
 		<Flex
 			h="100%"
 			direction="column"
-			justify="space-between"
+			justify="space-evenly"
 			align="space-between"
 			paddingTop={2}
+			// border="solid blue"
 		>
-			<Flex direction="column" h="100%" w="100%">
+			<Flex
+				direction="column"
+				minH="calc(var(--vh, 1vh) * 70)"
+				w="100%"
+				// border="solid"
+			>
 				{" "}
 				<Flex
-					h=" calc(var(--vh, 1vh) * 70)"
+					h="100%"
 					w="100%"
 					overflowY={"auto"}
 					direction="column"
+					// border="solid"
 				>
 					{" "}
 					{cartItems.length ? (

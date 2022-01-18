@@ -10,9 +10,7 @@ img {
   }
 
   .image-stack__item--top {
-      // float: right;
-      // width: 66%;
-      // margin-right: -100%;
+  
       position: relative;
       z-index: 1; // tells the browser to make this image on top
   }

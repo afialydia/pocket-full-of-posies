@@ -33,8 +33,6 @@
 		"web-vitals": "^2.1.2"
 	},
 	"scripts": {
-		"format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write '**/*.js'",
-		"lint": "eslint . --ext .js",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
@@ -59,6 +57,7 @@
 		]
 	},
 	"devDependencies": {
+		"eslint-config-prettier": "^8.3.0",
 		"prettier": "^2.5.1",
 		"prettier-eslint": "^13.0.0",
 		"prettier-eslint-cli": "^5.0.1"

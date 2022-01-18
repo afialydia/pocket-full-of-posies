@@ -3,7 +3,6 @@ import {
 	useDisclosure,
 	Drawer,
 	DrawerContent,
-	Spacer,
 	DrawerBody,
 	Flex,
 	Box,
@@ -26,7 +25,8 @@ const CartDrawer = () => {
 				isOpen={isOpen}
 				finalFocusRef={contactRef}
 				preserveScrollBarGap
-				isFullHeight
+				// isFullHeight
+				minH=" calc(var(--vh, 1vh) * 100)"
 				size="md"
 				padding=".25rem"
 			>
@@ -35,7 +35,7 @@ const CartDrawer = () => {
 					background="linear-gradient(
     to right bottom,
     rgba(245,245,245, 0.4),
-    rgba(113,139,156, 0.3))"
+    rgba(113,139,156, 0.5))"
 					filter="contrast(100%) brightness(100%)"
 				>
 					<DrawerBody

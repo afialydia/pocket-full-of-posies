@@ -7,7 +7,7 @@ const CartIcon = ({ onOpen }) => {
 	const itemCount = useSelector(selectCartItemsCount);
 	return (
 		<Heading
-			fontSize={{base:"md", md:"4xl"}}
+			fontSize={{base:"xl", md:"4xl"}}
 			color="whitesmoke"
 			lineHeight={"shorter"}
 			align={"center"}
