@@ -1,20 +1,20 @@
 import React from "react";
+import BestSellers from "../best-seller";
 
 //styles
 import {
-	Grid,
-	GridItem,
+	Box,
 	Center,
 	Flex,
-	Box,
+	Grid,
+	GridItem,
 	Heading,
+	Image,
 	Text,
 	useBreakpointValue,
-	Image,
 	useMediaQuery,
 } from "@chakra-ui/react";
 import "./about.styles.scss";
-import BestSellers from "../best-seller";
 
 const About = () => {
 	const [isVariableHeight] = useMediaQuery(
@@ -112,11 +112,10 @@ const About = () => {
 								>
 									Pocket Full of Posies is an online floral delivery agency
 									based in Baltimore, Maryland. Shop from our wide selection of
-									floral designs, bouquets, and other creative 
-									arrangements to send a meaningful gift in MD from a floral
-									artist. Be prepared with the best gift for memorable days like
-									Valentine’s Day and Mother’s Day, when deciding on a gift can
-									be tough.{" "}
+									floral designs, bouquets, and other creative arrangements to
+									send a meaningful gift in MD from a floral artist. Be prepared
+									with the best gift for memorable days like Valentine’s Day and
+									Mother’s Day, when deciding on a gift can be tough.{" "}
 								</Text>
 							</Flex>
 						</Center>
