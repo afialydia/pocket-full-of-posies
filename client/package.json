@@ -33,8 +33,7 @@
 		"web-vitals": "^2.1.2"
 	},
 	"scripts": {
-		"format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write '**/*.js'",
-		"lint": "eslint . --ext .js",
+
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",

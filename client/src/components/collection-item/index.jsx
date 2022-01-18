@@ -39,7 +39,6 @@ const CollectionItem = ({ item, imageUrl }) => {
 			<Center
 				h="10%"
 				w="auto"
-				direction="column"
 				p={4}
 				position="absolute"
 				background="rgb(245,245,245,.9)"
@@ -69,7 +68,6 @@ const CollectionItem = ({ item, imageUrl }) => {
 				p={4}
 				position="absolute"
 				background="rgb(245,245,245,.9)"
-				direction="column"
 				transform={"translate(0px,-5%)"}
 				backdropFilter="blur(2rem)"
 				display={showInfo ? "inline-block" : "none"}

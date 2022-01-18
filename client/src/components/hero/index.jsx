@@ -1,13 +1,4 @@
-import {
-	Stack,
-	Flex,
-	Button,
-	Heading,
-	VStack,
-	chakra,
-	useBreakpointValue,
-} from "@chakra-ui/react";
-import { ReactComponent as Logo } from "../../assets/Logo.svg";
+import { Flex, VStack } from "@chakra-ui/react";
 
 export default function Hero() {
 	return (

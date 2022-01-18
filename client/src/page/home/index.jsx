@@ -1,7 +1,7 @@
 import React from "react";
 
 //styles
-import { Flex, Center, Text, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Flex, Center, Grid, GridItem } from "@chakra-ui/react";
 
 //files
 import Directory from "../../components/directory";

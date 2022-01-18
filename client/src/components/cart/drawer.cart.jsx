@@ -3,7 +3,6 @@ import {
 	useDisclosure,
 	Drawer,
 	DrawerContent,
-	Spacer,
 	DrawerBody,
 	Flex,
 	Box,
