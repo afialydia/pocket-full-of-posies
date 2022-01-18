@@ -100,13 +100,12 @@ const About = () => {
 								backdropFilter="blur(2rem)"
 							>
 								<Heading textAlign={"center"} h="auto">
-									About our shop!
+									ABOUT OUR SHOP
 								</Heading>
 								<Text
 									p={4}
 									sx={{
 										textAlign: " justify",
-										textjustify: "distribute",
 										textAlignLast: "left",
 									}}
 									fontSize="xl"
@@ -134,13 +133,12 @@ const About = () => {
 								direction="column"
 							>
 								<Heading textAlign={"center"} h="auto">
-									About our shop!
+									ABOUT OUR SHOP
 								</Heading>
 								<Text
 									p="1rem"
 									sx={{
 										textAlign: " justify",
-										textjustify: "distribute",
 										textAlignLast: "left",
 									}}
 									fontSize="xl"
@@ -149,7 +147,7 @@ const About = () => {
 									bouquets, and other creative floral arrangements to send a
 									meaningful gift in MD from a floral artist. Be prepared with
 									the best gift for memorable days like Valentine’s Day and
-									Mother’s Day, when deciding on a gift can be tough.{" "}
+									Mother’s Day, when deciding on a gift can be tough.
 								</Text>
 							</Flex>
 						</Center>
