@@ -34,7 +34,7 @@ const About = () => {
 			wrap="wrap"
 			paddingTop={useBreakpointValue({ base: 4, md: "1.6rem" })}
 		>
-			<Center grow={2} flexDirection="column" w="100%" h="100%">
+			<Center grow={2} flexDirection="column" w="100%" h="100%" minH={{base:'750px'}} >
 				<Center flexDirection="column">
 					<Heading textAlign={"center"} size="4xl">
 						DAILY FLORAL DELIVERY
@@ -156,7 +156,7 @@ const About = () => {
 					</Flex>
 				</Center>
 			</Center>
-			<Box flexDirection="column" minH="60vh" w="100%">
+			<Box flexDirection="column" h="100%" w="100%">
 				<Grid
 					minH="100%"
 					w={{ base: "100%", md: "80%" }}
@@ -165,7 +165,7 @@ const About = () => {
 					gap={4}
 					p={{ base: 4 }}
 					margin="0 auto"
-					marginY="5rem"
+					marginY="2.5rem"
 					justifyItems="stretch"
 					alignItems="stretch"
 				>

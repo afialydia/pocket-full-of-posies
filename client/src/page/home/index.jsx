@@ -13,10 +13,10 @@ const HomePage = () => {
 		<Flex width="100%" h="100%" className="App" direction="column">
 			<Grid
 				templateColumns="1fr"
+				templateRows="repeat(1fr,4)"
 				placeItems="center stretch"
 				h="100%"
 				w="100%"
-				area=" 2 / 1 / 2 / 4"
 			>
 				<GridItem rowSpan={1} colSpan={1} height=" calc(var(--vh, 1vh) * 100)">
 					<Hero />
