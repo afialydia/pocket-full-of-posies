@@ -17,7 +17,6 @@ const ShopOverview = () => {
 			minH=" calc(var(--vh, 1vh) * 250)"
 			justify="space-evenly"
 		>
-			{" "}
 			{collections.map(({ id, ...otherCollectionProps }) => {
 				return <ShopPreview key={id} {...otherCollectionProps} />;
 			})}

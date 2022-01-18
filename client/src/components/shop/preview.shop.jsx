@@ -31,7 +31,8 @@ const ShopPreview = ({ title, routeName, items }) => {
 					lg: "repeat(4, 1fr)",
 				}}
 				templateRows={{
-					base: "repeat(6,1fr)",
+					base: "repeat(2,fr)",
+					md:"repeat(6,1fr)",
 				}}
 				gap={4}
 				p={4}
@@ -43,7 +44,7 @@ const ShopPreview = ({ title, routeName, items }) => {
 					.map((item) => (
 						<GridItem
 							h="auto"
-							rowSpan={6}
+							rowSpan={{base:1,md:6}}
 							colSpan={1}
 							key={item.id}
 						>
@@ -55,7 +56,7 @@ const ShopPreview = ({ title, routeName, items }) => {
 						</GridItem>
 					))}
 
-				<GridItem rowSpan={{ base: 2, md: 6 }} colSpan={1}>
+				<GridItem rowSpan={{ base: 1, md: 6 }} colSpan={1}>
 					<SeeFullCollection title={title} routeName={routeName} />
 				</GridItem>
 			</Grid>

@@ -11,14 +11,7 @@ import About from "../../components/about";
 const HomePage = () => {
 	return (
 		<Flex width="100%" h="100%" className="App" direction="column">
-			<Grid
-				// templateColumns="1fr"
-				// templateRows="repeat(3, 1fr)"
-				placeItems="center stretch"
-				h="100%"
-				w="100%"
-				// area=" 2 / 1 / 2 / 4"
-			>
+			<Grid placeItems="center stretch" h="100%" w="100%">
 				<GridItem rowSpan={1} colSpan={1} height=" calc(var(--vh, 1vh) * 100)">
 					<Hero />
 				</GridItem>
@@ -31,8 +24,10 @@ const HomePage = () => {
 					<About />
 				</GridItem>
 
-				<GridItem rowSpan={1} colSpan={1} 
-				// minH=" calc(var(--vh, 1vh) * 100)"
+				<GridItem
+					rowSpan={1}
+					colSpan={1}
+					// minH=" calc(var(--vh, 1vh) * 100)"
 				>
 					<Center h="100%">
 						<Directory />
